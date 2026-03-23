@@ -31,3 +31,46 @@ Admin
 4. Reject booking with information -> send notification
 5. Send proof of payment
 6. View users - with their bookings
+
+
+
+Here’s a better version of your API design:
+
+Auth
+POST /auth/register
+POST /auth/login
+GET /auth/me
+Services
+GET /services
+GET /services/:id
+Orders (Main Core)
+POST /orders
+GET /orders
+GET /orders/:id
+Forex
+GET /exchange-rate
+POST /orders/calculate-price
+Payments
+POST /payments
+GET /payments/:id
+Admin
+GET /admin/orders
+PATCH /admin/orders/:id/accept
+PATCH /admin/orders/:id/reject
+PATCH /admin/orders/:id/complete
+POST /admin/orders/:id/proof
+Users (Admin)
+GET /admin/users
+
+Option 1 (Best)
+
+Build:
+POST /orders
+GET /orders
+Option 2
+
+Design database tables:-
+users
+orders
+payments
+services

@@ -33,33 +33,44 @@ Admin
 
 
 Backend APIs (MVP)
-🔐 Auth (3 APIs)
+Auth
 POST /auth/register
 POST /auth/login
 GET /auth/me
-👉 Handles users + sessions
 
-🧑 User Features (6 APIs)
 Services
-GET /services → list all services
-GET /services/:id → service details
-Bookings
-POST /bookings → create booking
-GET /bookings → user’s bookings
-GET /bookings/:id → booking details
-Payment Proof
-POST /bookings/:id/payment-proof
-🛠️ Admin Features (7 APIs)
-Booking Management
-GET /admin/bookings
-GET /admin/bookings/:id
-PATCH /admin/bookings/:id/accept
-PATCH /admin/bookings/:id/reject
-PATCH /admin/bookings/:id/complete
-Proof Upload
-POST /admin/bookings/:id/proof
-Users
+GET /services
+GET /services/:id
+Orders (Main Core)
+POST /orders
+GET /orders
+GET /orders/:id
+
+Forex
+GET /exchange-rate
+POST /orders/calculate-price
+Payments
+POST /payments
+GET /payments/:id
+
+Admin
+GET /admin/orders
+PATCH /admin/orders/:id/accept
+PATCH /admin/orders/:id/reject
+PATCH /admin/orders/:id/complete
+POST /admin/orders/:id/proof
+
+Users (Admin)
 GET /admin/users
-💬 Support (Optional MVP: 2 APIs)
-POST /support/ticket
-GET /support/tickets
+
+Option 1 (Best)
+Build:
+POST /orders
+GET /orders
+Option 2
+
+Design database tables:-
+users
+orders
+payments
+services

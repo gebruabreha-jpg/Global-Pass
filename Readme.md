@@ -30,4 +30,4 @@ Admin
 3. Accept booking - > send notification via email and redirection to app
 4. Reject booking with information -> send notification
 5. Send proof of payment
-6. View users - with their bookings
+6. View users - with their bookings,....
